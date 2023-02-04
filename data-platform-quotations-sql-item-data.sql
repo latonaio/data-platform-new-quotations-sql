@@ -25,6 +25,8 @@ CREATE TABLE `data_platform_quotations_item_data`
     `ItemGrossWeight`                                   float(15) DEFAULT NULL,
     `ProductNetWeight`                                  float(15) DEFAULT NULL,
     `ItemNetWeight`                                     float(15) DEFAULT NULL,
+    `InternalCapacityQuantity`                          float(15) DEFAULT NULL,
+    `InternalCapacityQuantityUnit`                      varchar(3) DEFAULT NULL,
     `NetAmount`                                         float(13) DEFAULT NULL,
     `TaxAmount`                                         float(13) DEFAULT NULL,
     `GrossAmount`                                       float(13) DEFAULT NULL,
@@ -46,6 +48,8 @@ CREATE TABLE `data_platform_quotations_item_data`
     `CountryOfOrigin`                                   varchar(3) DEFAULT NULL,
     `CountryOfOriginLanguage`                           varchar(2) DEFAULT NULL,
     `ItemBlockStatus`                                   tinyint(1) DEFAULT NULL,
+    `IsCancelled`                                       tinyint(1) DEFAULT NULL,
+    `IsMarkedForDeletion`                             tinyint(1) DEFAULT NULL,
 
     PRIMARY KEY (`Quotation`, `QuotationItem`),
     
@@ -54,6 +58,7 @@ CREATE TABLE `data_platform_quotations_item_data`
     CONSTRAINT `DataPlatformQuotationsItemDataBaseUnit_fk` FOREIGN KEY (`BaseUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
     CONSTRAINT `DataPlatformQuotationsItemDataDeliveryUnit_fk` FOREIGN KEY (`DeliveryUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
     CONSTRAINT `DataPlatformQuotationsItemDataItemWeightUnit_fk` FOREIGN KEY (`ItemWeightUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
+    CONSTRAINT `DataPlatformQuotationsItemDataInternalCapacityQuantityUnit_fk` FOREIGN KEY (`InternalCapacityQuantityUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
     CONSTRAINT `DataPlatformQuotationsItemDataIncoterms_fk` FOREIGN KEY (`Incoterms`) REFERENCES `data_platform_incoterms_incoterms_data` (`Incoterms`),
     CONSTRAINT `DataPlatformQuotationsItemDataPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`),
     CONSTRAINT `DataPlatformQuotationsItemDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_project_project_data` (`Project`),

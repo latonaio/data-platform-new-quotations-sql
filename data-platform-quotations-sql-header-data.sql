@@ -44,6 +44,8 @@ CREATE TABLE `data_platform_quotations_header_data`
   `IsExportImport`                   tinyint(1) DEFAULT NULL,
   `HeaderText`                       varchar(200) DEFAULT NULL,
   `HeaderBlockStatus`                tinyint(1) DEFAULT NULL,
+  `IsCancelled`                      tinyint(1) DEFAULT NULL,
+  `IsMarkedForDeletion`              tinyint(1) DEFAULT NULL,
 
     PRIMARY KEY (`Quotation`),
     
