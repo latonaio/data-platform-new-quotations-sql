@@ -37,7 +37,6 @@ CREATE TABLE `data_platform_quotations_header_data`
   `PaymentTerms`                     varchar(4) NOT NULL,
   `PaymentMethod`                    varchar(1) NOT NULL,
   `ReferenceDocument`                int(16) DEFAULT NULL,
-  `ReferenceDocumentItem`            int(6) DEFAULT NULL,
   `AccountAssignmentGroup`           varchar(2) NOT NULL,
   `AccountingExchangeRate`           float(8) DEFAULT NULL,
   `InvoiceDocumentDate`              date NOT NULL,
