@@ -15,8 +15,6 @@ CREATE TABLE `data_platform_quotations_header_data`
   `BillFromCountry`                  varchar(3) DEFAULT NULL,
   `Payer`                            int(12) DEFAULT NULL,
   `Payee`                            int(12) DEFAULT NULL,
-  `CreationDate`                     date NOT NULL,
-  `LastChangeDate`                   date NOT NULL,
   `ContractType`                     varchar(4) DEFAULT NULL,
   `BindingPeriodValidityStartDate`   date DEFAULT NULL,
   `BindingPeriodValidityEndDate`     date DEFAULT NULL,
@@ -43,6 +41,8 @@ CREATE TABLE `data_platform_quotations_header_data`
   `IsExportImport`                   tinyint(1) DEFAULT NULL,
   `HeaderText`                       varchar(200) DEFAULT NULL,
   `HeaderBlockStatus`                tinyint(1) DEFAULT NULL,
+  `CreationDate`                     date NOT NULL,
+  `LastChangeDate`                   date NOT NULL,
   `IsCancelled`                      tinyint(1) DEFAULT NULL,
   `IsMarkedForDeletion`              tinyint(1) DEFAULT NULL,
 

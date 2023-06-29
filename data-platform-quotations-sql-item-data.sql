@@ -14,8 +14,6 @@ CREATE TABLE `data_platform_quotations_item_data`
     `PricingDate`                                       date NOT NULL,
     `PriceDetnExchangeRate`                             float(8) DEFAULT NULL,
     `RequestedDeliveryDate`                             date NOT NULL,
-    `CreationDate`                                      date NOT NULL,
-    `LastChangeDate`                                    date NOT NULL,
     `DeliveryUnit`                                      varchar(3) NOT NULL,
     `ServicesRenderingDate`                             date DEFAULT NULL,
     `QuotationQuantityInBaseUnit`                       float(15) NOT NULL,
@@ -48,6 +46,8 @@ CREATE TABLE `data_platform_quotations_item_data`
     `CountryOfOrigin`                                   varchar(3) DEFAULT NULL,
     `CountryOfOriginLanguage`                           varchar(2) DEFAULT NULL,
     `ItemBlockStatus`                                   tinyint(1) DEFAULT NULL,
+    `CreationDate`                                      date NOT NULL,
+    `LastChangeDate`                                    date NOT NULL,
     `IsCancelled`                                       tinyint(1) DEFAULT NULL,
     `IsMarkedForDeletion`                             tinyint(1) DEFAULT NULL,
 
