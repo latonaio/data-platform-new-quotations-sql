@@ -37,7 +37,8 @@ CREATE TABLE `data_platform_quotations_item_data`
     `ProductAccountAssignmentGroup`                     varchar(2) NOT NULL,
     `PaymentTerms`                                      varchar(4) NOT NULL,
     `PaymentMethod`                                     varchar(1) NOT NULL,
-    `Project`                                           varchar(24) DEFAULT NULL,
+    `Project`                                           int(16) DEFAULT NULL,
+    `WBSElement`                                        int(8) DEFAULT NULL,
     `AccountingExchangeRate`                            float(8) DEFAULT NULL,
     `ReferenceDocument`                                 int(16) DEFAULT NULL,
     `ReferenceDocumentItem`                             int(6) DEFAULT NULL,
@@ -62,6 +63,7 @@ CREATE TABLE `data_platform_quotations_item_data`
     CONSTRAINT `DataPlatformQuotationsItemDataIncoterms_fk` FOREIGN KEY (`Incoterms`) REFERENCES `data_platform_incoterms_incoterms_data` (`Incoterms`),
     CONSTRAINT `DataPlatformQuotationsItemDataPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`),
     CONSTRAINT `DataPlatformQuotationsItemDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_project_project_data` (`Project`),
+    CONSTRAINT `DataPlatformQuotationsItemDataWBSElement_fk` FOREIGN KEY (`Project`, `WBSElement`) REFERENCES `data_platform_project_wbs_element_data` (`Project`, `WBSElement`),
     CONSTRAINT `DataPlatformQuotationsItemDataTaxCode_fk` FOREIGN KEY (`TaxCode`) REFERENCES `data_platform_tax_code_tax_code_data` (`TaxCode`),
     CONSTRAINT `DataPlatformQuotationsItemDataCountryOfOrigin_fk` FOREIGN KEY (`CountryOfOrigin`) REFERENCES `data_platform_country_country_data` (`Country`),
     CONSTRAINT `DataPlatformQuotationsItemDataCountryOfOriginLanguage_fk` FOREIGN KEY (`CountryOfOriginLanguage`) REFERENCES `data_platform_language_language_data` (`Language`)
