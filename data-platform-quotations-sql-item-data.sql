@@ -64,7 +64,7 @@ CREATE TABLE `data_platform_quotations_item_data`
     CONSTRAINT `DataPlatformQuotationsItemDataPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`),
     CONSTRAINT `DataPlatformQuotationsItemDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_project_project_data` (`Project`),
     CONSTRAINT `DataPlatformQuotationsItemDataWBSElement_fk` FOREIGN KEY (`Project`, `WBSElement`) REFERENCES `data_platform_project_wbs_element_data` (`Project`, `WBSElement`),
-    CONSTRAINT `DataPlatformQuotationsItemDataTaxCode_fk` FOREIGN KEY (`TaxCode`) REFERENCES `data_platform_tax_code_tax_code_data` (`TaxCode`),
+--  CONSTRAINT `DataPlatformQuotationsItemDataTaxCode_fk` FOREIGN KEY (`TaxCode`) REFERENCES `data_platform_tax_code_tax_code_data` (`TaxCode`),
     CONSTRAINT `DataPlatformQuotationsItemDataCountryOfOrigin_fk` FOREIGN KEY (`CountryOfOrigin`) REFERENCES `data_platform_country_country_data` (`Country`),
     CONSTRAINT `DataPlatformQuotationsItemDataCountryOfOriginLanguage_fk` FOREIGN KEY (`CountryOfOriginLanguage`) REFERENCES `data_platform_language_language_data` (`Language`)
 
