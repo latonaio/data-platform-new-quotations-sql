@@ -13,6 +13,7 @@ data-platform-quotations-sql には、sqlの設定ファイルとして、以下
 * data-platform-quotations-sql-header-data.sql（データ連携基盤 見積 - ヘッダデータ）
 * data-platform-quotations-sql-header-doc-data.sql（データ連携基盤 見積 - ヘッダ文書データ）
 * data-platform-quotations-sql-item-data.sql（データ連携基盤 見積 - 明細データ）
+* data-platform-quotations-sql-item-doc-data.sql（データ連携基盤 見積 - 明細文書データ）
 * data-platform-quotations-sql-item-pricing-element-data.sql（データ連携基盤 見積 - 明細価格決定要素データ）
 * data-platform-quotations-sql-partner-data.sql（データ連携基盤 見積 - 取引先データ）
 * data-platform-quotations-sql-address-data.sql（データ連携基盤 見積 - 住所データ）

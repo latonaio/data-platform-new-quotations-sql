@@ -14,8 +14,8 @@ CREATE TABLE `data_platform_quotations_address_data`
     
     PRIMARY KEY (`Quotation`, `AddressID`),
 
-    CONSTRAINT `DataPlatformQuotationsAddressData_fk` FOREIGN KEY (`Quotation`) REFERENCES `data_platform_quotations_header_data` (`Quotation`),
-    CONSTRAINT `DataPlatformQuotationsAddressDataAddressID_fk` FOREIGN KEY (`AddressID`) REFERENCES `data_platform_address_address_data` (`AddressID`)
+    CONSTRAINT `DPFMQuotationsAddressData_fk` FOREIGN KEY (`Quotation`) REFERENCES `data_platform_quotations_header_data` (`Quotation`),
+    CONSTRAINT `DPFMQuotationsAddressDataAddressID_fk` FOREIGN KEY (`AddressID`) REFERENCES `data_platform_address_address_data` (`AddressID`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

@@ -14,22 +14,20 @@ CREATE TABLE `data_platform_quotations_item_pricing_element_data`
   `ConditionRateValueUnit`      int(6) NOT NULL,
   `ConditionScaleQuantity`      int(13) NOT NULL,
   `ConditionCurrency`           varchar(5) NOT NULL,
-  `ConditionQuantity`           float(6) NOT NULL,
+  `ConditionQuantity`           float(15) NOT NULL,
   `TaxCode`                     varchar(1) DEFAULT NULL,
   `ConditionAmount`             float(13) NOT NULL,
   `TransactionCurrency`         varchar(5) NOT NULL,
   `ConditionIsManuallyChanged`  tinyint(1) DEFAULT NULL,
   `CreationDate`                date NOT NULL,
-  `CreationTime`                time NOT NULL,
   `LastChangeDate`              date NOT NULL,
-  `LastChangeTime`              time NOT NULL,
   `IsCancelled`                 tinyint(1) DEFAULT NULL,
   `IsMarkedForDeletion`         tinyint(1) DEFAULT NULL,
   
   PRIMARY KEY (`Quotation`, `QuotationItem`, `SupplyChainRelationshipID`, `Buyer`, `Seller`, `PricingProcedureCounter`),
     
-  CONSTRAINT `DataPlatformQuotationsItemPricingElementData_fk` FOREIGN KEY (`Quotation`, `QuotationItem`) REFERENCES `data_platform_quotations_item_data` (`Quotation`, `QuotationItem`),
-  CONSTRAINT `DataPlatformQuotationsItemPricingElementDataSupplyChainRelationshipID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_supply_chain_relationship_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`)
+  -- CONSTRAINT `DPFMQuotationsItemPricingElementData_fk` FOREIGN KEY (`Quotation`, `QuotationItem`) REFERENCES `data_platform_quotations_item_data` (`Quotation`, `QuotationItem`),　テーブルなし
+  CONSTRAINT `DPFMQuotationsItemPricingElementDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_scr_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`)
   
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
