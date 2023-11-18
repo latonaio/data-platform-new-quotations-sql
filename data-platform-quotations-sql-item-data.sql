@@ -49,6 +49,8 @@ CREATE TABLE `data_platform_quotations_item_data`
     `CountryOfOrigin`                          varchar(3) DEFAULT NULL,
     `CountryOfOriginLanguage`                  varchar(2) DEFAULT NULL,
     `ItemBlockStatus`                          tinyint(1) DEFAULT NULL,
+    `ExternalReferenceDocument`         	   varchar(100) DEFAULT NULL,
+    `ExternalReferenceDocumentItem`     	   varchar(10) DEFAULT NULL,
     `CreationDate`                             date NOT NULL,
     `LastChangeDate`                           date NOT NULL,
     `IsCancelled`                              tinyint(1) DEFAULT NULL,

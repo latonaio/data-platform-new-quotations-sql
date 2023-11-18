@@ -43,6 +43,7 @@ CREATE TABLE `data_platform_quotations_header_data`
   `HeaderText`                       varchar(200) DEFAULT NULL,
   `HeaderIsClosed`                   tinyint(1) DEFAULT NULL,
   `HeaderBlockStatus`                tinyint(1) DEFAULT NULL,
+  `ExternalReferenceDocument`        varchar(100) DEFAULT NULL,
   `CreationDate`                     date NOT NULL,
   `LastChangeDate`                   date NOT NULL,
   `IsCancelled`                      tinyint(1) DEFAULT NULL,
