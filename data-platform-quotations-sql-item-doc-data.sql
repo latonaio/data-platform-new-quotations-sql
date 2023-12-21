@@ -12,7 +12,7 @@ CREATE TABLE `data_platform_quotations_item_doc_data`
   
     PRIMARY KEY (`Quotation`, `QuotationItem`, `DocType`, `DocVersionID`, `DocID`),
     
-    -- CONSTRAINT `DPFMQuotationsItemDocData_fk` FOREIGN KEY (`Quotation`, `QuotationItem`) REFERENCES `data_platform_quotations_item_data` (`Quotation`, `QuotationItem`),　テーブルなし
+    CONSTRAINT `DPFMQuotationsItemDocData_fk` FOREIGN KEY (`Quotation`, `QuotationItem`) REFERENCES `data_platform_quotations_item_data` (`Quotation`, `QuotationItem`),
     CONSTRAINT `DPFMQuotationsItemDocDataDocType_fk` FOREIGN KEY (`DocType`) REFERENCES `data_platform_doc_type_doc_type_data` (`DocType`),
     CONSTRAINT `DPFMQuotationsItemDocDataDocIssuerBusinessPartner_fk` FOREIGN KEY (`DocIssuerBusinessPartner`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`)
     

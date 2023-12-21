@@ -26,7 +26,7 @@ CREATE TABLE `data_platform_quotations_item_pricing_element_data`
   
   PRIMARY KEY (`Quotation`, `QuotationItem`, `SupplyChainRelationshipID`, `Buyer`, `Seller`, `PricingProcedureCounter`),
     
-  -- CONSTRAINT `DPFMQuotationsItemPricingElementData_fk` FOREIGN KEY (`Quotation`, `QuotationItem`) REFERENCES `data_platform_quotations_item_data` (`Quotation`, `QuotationItem`),　テーブルなし
+  CONSTRAINT `DPFMQuotationsItemPricingElementData_fk` FOREIGN KEY (`Quotation`, `QuotationItem`) REFERENCES `data_platform_quotations_item_data` (`Quotation`, `QuotationItem`),
   CONSTRAINT `DPFMQuotationsItemPricingElementDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_scr_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`)
   
 ) ENGINE = InnoDB
