@@ -35,6 +35,8 @@ CREATE TABLE `data_platform_quotations_header_data`
   `Incoterms`                        varchar(4) DEFAULT NULL,
   `PaymentTerms`                     varchar(4) NOT NULL,
   `PaymentMethod`                    varchar(1) NOT NULL,
+  `Contract`                         int(16) DEFAULT NULL,
+  `ContractItem`                     int(6) DEFAULT NULL,
   `ReferenceDocument`                int(16) DEFAULT NULL,
   `AccountAssignmentGroup`           varchar(2) NOT NULL,
   `AccountingExchangeRate`           float(8) DEFAULT NULL,
@@ -44,6 +46,8 @@ CREATE TABLE `data_platform_quotations_header_data`
   `HeaderIsClosed`                   tinyint(1) DEFAULT NULL,
   `HeaderBlockStatus`                tinyint(1) DEFAULT NULL,
   `ExternalReferenceDocument`        varchar(100) DEFAULT NULL,
+  `CertificateAuthorityChain`        varchar(2000) DEFAULT NULL,
+  `UsageControlChain`                varchar(2000) DEFAULT NULL,
   `CreationDate`                     date NOT NULL,
   `LastChangeDate`                   date NOT NULL,
   `IsCancelled`                      tinyint(1) DEFAULT NULL,
@@ -59,7 +63,9 @@ CREATE TABLE `data_platform_quotations_header_data`
     CONSTRAINT `DPFMQuotationsHeaderTransactionCurrency_fk` FOREIGN KEY (`TransactionCurrency`) REFERENCES `data_platform_currency_currency_data` (`Currency`),
     CONSTRAINT `DPFMQuotationsHeaderIncoterms_fk` FOREIGN KEY (`Incoterms`) REFERENCES `data_platform_incoterms_incoterms_data` (`Incoterms`),
     CONSTRAINT `DPFMQuotationsHeaderPaymentTerms_fk` FOREIGN KEY (`PaymentTerms`) REFERENCES `data_platform_payment_terms_payment_terms_data` (`PaymentTerms`),
-    CONSTRAINT `DPFMQuotationsHeaderPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`)
+    CONSTRAINT `DPFMQuotationsHeaderPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`),
+    CONSTRAINT `DPFMQuotationsHeaderDataContract_fk` FOREIGN KEY (`Contract`) REFERENCES `data_platform_contract_header_data` (`Contract`),
+    CONSTRAINT `DPFMQuotationsHeaderDataContractItem_fk` FOREIGN KEY (`Contract`, `ContractItem`) REFERENCES `data_platform_contract_item_data` (`Contract`, `ContractItem`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
