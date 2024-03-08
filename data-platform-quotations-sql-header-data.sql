@@ -37,6 +37,8 @@ CREATE TABLE `data_platform_quotations_header_data`
   `PaymentMethod`                    varchar(1) NOT NULL,
   `Contract`                         int(16) DEFAULT NULL,
   `ContractItem`                     int(6) DEFAULT NULL,
+  `Project`                          int(16) DEFAULT NULL,
+  `WBSElement`                       int(8) DEFAULT NULL,
   `ReferenceDocument`                int(16) DEFAULT NULL,
   `AccountAssignmentGroup`           varchar(2) NOT NULL,
   `AccountingExchangeRate`           float(8) DEFAULT NULL,
@@ -65,7 +67,9 @@ CREATE TABLE `data_platform_quotations_header_data`
     CONSTRAINT `DPFMQuotationsHeaderPaymentTerms_fk` FOREIGN KEY (`PaymentTerms`) REFERENCES `data_platform_payment_terms_payment_terms_data` (`PaymentTerms`),
     CONSTRAINT `DPFMQuotationsHeaderPaymentMethod_fk` FOREIGN KEY (`PaymentMethod`) REFERENCES `data_platform_payment_method_payment_method_data` (`PaymentMethod`),
     CONSTRAINT `DPFMQuotationsHeaderDataContract_fk` FOREIGN KEY (`Contract`) REFERENCES `data_platform_contract_header_data` (`Contract`),
-    CONSTRAINT `DPFMQuotationsHeaderDataContractItem_fk` FOREIGN KEY (`Contract`, `ContractItem`) REFERENCES `data_platform_contract_item_data` (`Contract`, `ContractItem`)
+    CONSTRAINT `DPFMQuotationsHeaderDataContractItem_fk` FOREIGN KEY (`Contract`, `ContractItem`) REFERENCES `data_platform_contract_item_data` (`Contract`, `ContractItem`),
+    CONSTRAINT `DPFMQuotationsHeaderDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_project_project_data` (`Project`),
+    CONSTRAINT `DPFMQuotationsHeaderDataWBSElement_fk` FOREIGN KEY (`Project`, `WBSElement`) REFERENCES `data_platform_project_wbs_element_data` (`Project`, `WBSElement`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
